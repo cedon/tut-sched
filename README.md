@@ -13,7 +13,7 @@ CSS was originally generated using LESS.
 
 ## FAQ
 
-### Where did this project originate?
+#### Where did this project originate?
 
 This schedule started off existing online as only a PDF of the printed schedule students could pick up. This was a cumbersome process because due to the speed at which changes occurred. The printed flyer was slow to update and the only sign that it updated the was the paper changing color.
 
@@ -21,11 +21,11 @@ At first a giant table replicating the printed flyer was the first online soluti
 
 When I started playing around with jQuery I took a copy of the page and started experimenting. I liked what was happening so I decided to keep evolving it to make it better for use on future projects.
 
-## Why not use a Content Management System?
+#### Why not use a Content Management System?
 
 Unfortunately I was constrained to a SharePoint system where I had limited access and could only really control what would appear in a center column about 530px wide.
 
-### Why convert the jQuery to JavaScript?
+#### Why convert the jQuery to JavaScript?
 
 Without wading into the debate on jQuery versus JavaScript, the simple answer is I feel that using jQuery is a little overkill.
 
