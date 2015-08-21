@@ -6,7 +6,7 @@ var theListParent = document.getElementById(theListParentNodeId);
 var theListItems = theList.getElementsByTagName("li");
 var theListItemLinks = theList.getElementsByTagName("a");
 var listCount = theListItems.length;
-var firstColCount, secColCount, i;
+var firstColCount, secColCount;
 
 // Assuming Two Columns
 if ( listCount % 2 == 1) {
@@ -36,6 +36,7 @@ for (i = 0; i < firstColCount; i++) {
     // Create the new a element
     var theNewItemLink = document.createElement("a");
     theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.setAttribute("role", "button");
 
     //Create new text node
     var theNewItemText = document.createTextNode(theListItemLinks[i].innerHTML);
@@ -65,6 +66,7 @@ for (i = listCount - secColCount; i < listCount; i++) {
     // Create the new a element
     var theNewItemLink = document.createElement("a");
     theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.setAttribute("role", "button");
 
     //Create new text node
     var theNewItemText = document.createTextNode(theListItemLinks[i].innerHTML);

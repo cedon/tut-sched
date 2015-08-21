@@ -7,8 +7,6 @@ var theNewID,
     el.setAttribute('href', '#');
 
 
-    //console.log(theNewID);
-
     el.addEventListener('click', function() {
         [].forEach.call(subjectDivs, function(div) {
             theID = el.parentNode.getAttribute('id');
