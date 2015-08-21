@@ -31,11 +31,12 @@ for (i = 0; i < firstColCount; i++) {
     // Create the new li element
     var theNewItem = document.createElement("li");
     theNewItem.id = theListItemLinks[i].parentNode.getAttribute("id");
-    theNewItem.className = "bttn";
+    theNewItem.className = "button";
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
     theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
     //Create new text node
@@ -61,11 +62,12 @@ for (i = listCount - secColCount; i < listCount; i++) {
     // Create the new li element
     var theNewItem = document.createElement("li");
     theNewItem.id = theListItemLinks[i].parentNode.getAttribute("id");
-    theNewItem.className = "bttn";
+    theNewItem.className = "button";
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
     theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
     //Create new text node
