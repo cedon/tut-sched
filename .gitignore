@@ -84,5 +84,5 @@ builds/dev/_js/*
 ########
 builds/**/_img/*
 builds/**/_css/*
-!Builds/dev/_js/testing.js
+
 
