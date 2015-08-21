@@ -17,12 +17,6 @@ if ( listCount % 2 == 1) {
     secColCount = listCount / 2;
 }
 
-console.log("The List's Parent is: " + theListParentNode);
-console.log("The List's Parent ID is: " + theListParentNodeId);
-
-console.log("First Column: " + firstColCount);
-console.log("Second Column: " + secColCount);
-
 // Remove the One-Column List from the DOM
 theList.parentNode.removeChild(theList);
 
@@ -82,4 +76,4 @@ secColDiv.appendChild(secColDivList);
 theListParent.appendChild(secColDiv);
 
 // Clear the next Div after columns
-theNextSibling.style.clear = "both";a
+theNextSibling.style.clear = "both";
