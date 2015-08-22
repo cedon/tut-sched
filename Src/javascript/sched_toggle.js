@@ -1,5 +1,4 @@
 var theButtons = document.getElementsByClassName("button");
-var theSubjectDivs = document.getElementsByClassName("schedsubject");
 
 function bttnToggle() {
     var regEx = '_button';
