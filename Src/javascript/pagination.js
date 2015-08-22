@@ -7,6 +7,7 @@ var theListItems = theList.getElementsByTagName("li");
 var theListItemLinks = theList.getElementsByTagName("a");
 var listCount = theListItems.length;
 var firstColCount, secColCount;
+var theSubjectDivs = document.getElementsByClassName("schedsubject");
 
 // Assuming Two Columns
 if ( listCount % 2 == 1) {
@@ -35,7 +36,7 @@ for (i = 0; i < firstColCount; i++) {
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
-    theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.setAttribute("href", "#" + theSubjectDivs[i].id);
     theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
@@ -66,7 +67,7 @@ for (i = listCount - secColCount; i < listCount; i++) {
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
-    theNewItemLink.setAttribute("href", "#");
+    theNewItemLink.setAttribute("href", "#" + theSubjectDivs[i].id);
     theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
