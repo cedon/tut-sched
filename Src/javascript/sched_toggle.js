@@ -7,9 +7,11 @@ function bttnToggle() {
     for (d=0; d < theSubjectDivs.length; d++) {
         if (theSubjectDivs[d].id === theTargetId) {
             theSubjectDivs[d].style.display = "block";
+            theSubjectDivs[d].style.clear = "both";
             theSubjectDivs[d].setAttribute("aria-hidden", "false");
         } else {
             theSubjectDivs[d].style.display = "none";
+            theSubjectDivs[d].style.removeProperty("clear");
             theSubjectDivs[d].setAttribute("aria-hidden", "true");
         }
     }
