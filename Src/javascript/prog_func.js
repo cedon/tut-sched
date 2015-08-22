@@ -5,7 +5,6 @@ var i;
 var noscripts = document.getElementsByClassName("no-script");
 for (i = 0; i < noscripts.length; i++) {
     noscripts[i].style.display = "none";
-    console.log(noscripts[i]);
 }
 
 // Create the "Show All" Button
@@ -16,7 +15,7 @@ newBttn.className = "bttn";
 
 // Create Anchor Tag for "Show All Button"
 var newBttnLink = document.createElement("a");
-newBttnLink.setAttribute("href", "#");
+newBttnLink.setAttribute("href", "#navlinks");
 
 // Create Text Node for "Show Button" Anchor Tag
 var newBttnLinkText = document.createTextNode("Show All");
