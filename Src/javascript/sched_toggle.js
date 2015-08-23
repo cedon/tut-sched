@@ -1,3 +1,4 @@
+var d;
 var theButtons = document.getElementsByClassName("button");
 
 function bttnToggle() {
@@ -8,6 +9,13 @@ function bttnToggle() {
             theSubjectDivs[d].style.display = "block";
             theSubjectDivs[d].style.clear = "both";
             theSubjectDivs[d].setAttribute("aria-hidden", "false");
+        } else if (theTargetId === "showall") {
+            for (i=0; i < theSubjectDivs.length; i++) {
+                theSubjectDivs[d].style.removeProperty("clear");
+                theSubjectDivs[i].style.display = "block";
+                theSubjectDivs[d].setAttribute("aria-hidden", "false");
+            }
+            theNextSibling.style.clear = "both";
         } else {
             theSubjectDivs[d].style.display = "none";
             theSubjectDivs[d].style.removeProperty("clear");
