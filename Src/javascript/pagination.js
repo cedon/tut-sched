@@ -1,6 +1,6 @@
 var theList = document.getElementById("navlinks");
 var theNextSibling = document.querySelector("#navlinks").parentNode.nextElementSibling;
-var theListParentNode = theList.parentElement.nodeName;
+//var theListParentNode = theList.parentElement.nodeName;
 var theListParentNodeId = theList.parentNode.getAttribute("id");
 var theListParent = document.getElementById(theListParentNodeId);
 var theListItems = theList.getElementsByTagName("li");
@@ -8,6 +8,7 @@ var theListItemLinks = theList.getElementsByTagName("a");
 var listCount = theListItems.length;
 var firstColCount, secColCount;
 var theSubjectDivs = document.getElementsByClassName("schedsubject");
+//var subjectCount = theSubjectDivs.length;
 
 // Assuming Two Columns
 if ( listCount % 2 == 1) {
@@ -28,6 +29,9 @@ firstColDiv.style.float = "left";
 firstColDiv.style.width = "50%";
 var firstColDivList = document.createElement("ul");
 
+console.log("First Column Count: " + firstColCount);
+console.log("Second Column Count: " + secColCount);
+
 for (i = 0; i < firstColCount; i++) {
     // Create the new li element
     var theNewItem = document.createElement("li");
@@ -36,7 +40,8 @@ for (i = 0; i < firstColCount; i++) {
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
-    theNewItemLink.setAttribute("href", "#" + theSubjectDivs[i].id);
+    var theListItemLinkLoc = theListItemLinks[i].getAttribute("href");
+    theNewItemLink.setAttribute("href", theListItemLinkLoc);
     theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
@@ -67,7 +72,8 @@ for (i = listCount - secColCount; i < listCount; i++) {
 
     // Create the new a element
     var theNewItemLink = document.createElement("a");
-    theNewItemLink.setAttribute("href", "#" + theSubjectDivs[i].id);
+    var theListItemLinkLoc = theListItemLinks[i].getAttribute("href");
+    theNewItemLink.setAttribute("href", theListItemLinkLoc);
     theNewItemLink.className = "bttn";
     theNewItemLink.setAttribute("role", "button");
 
@@ -81,6 +87,7 @@ for (i = listCount - secColCount; i < listCount; i++) {
 }
 secColDiv.appendChild(secColDivList);
 theListParent.appendChild(secColDiv);
+
 
 // Clear the next Div after columns
 theNextSibling.style.clear = "both";
