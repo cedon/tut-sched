@@ -2,6 +2,8 @@
 var gulp = require('gulp'),
     gulpif = require ('gulp-if'),
     gutil = require('gulp-util'),
+    sass = require('gulp-ruby-sass'),
+    autoprefix = require('gulp-autoprefixer'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify');
@@ -18,6 +20,16 @@ var srcDirSass = 'Src/sass/',
 
 // Dest Variables
 var environment = 'dev'; // Switch to 'prod' for Production
+var dirJscs = dirScriptBuild + '/_js/jscs';
+
+// Sass Variables
+if (environment === 'dev') {
+    sassStyle = 'expanded';
+    sassLineNum = true;
+} else {
+    sassStyle = 'compressed';
+    sassLineNum = false;
+}
 
 var dirBuild = 'Builds/' + environment,
     dirScriptBuild = dirBuild + '/_js',
@@ -31,4 +43,17 @@ gulp.task('js', function() {
         .pipe(concat('script.js'))
         .pipe(gulpif((environment==='prod'),uglify({mangle: true})))
         .pipe(gulp.dest(dirScriptBuild))
+});
+
+gulp.task('compass', function() {
+    return sass(srcSass, {
+        compass: true,
+        lineNumbers: sassLineNum,
+        style: sassStyle,
+        sourcemap: true,
+        require: ['susy', 'breakpoint']
+    })
+        .on('error', gutil.log)
+        .pipe(autoprefix('last 2 version'))
+        .pipe(gulp.dest(dirStyleBuild))
 });
