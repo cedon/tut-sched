@@ -5,6 +5,7 @@ var i;
 var noscripts = document.getElementsByClassName("no-script");
 for (i = 0; i < noscripts.length; i++) {
     noscripts[i].style.display = "none";
+    noscripts[i].setAttribute("aria-hidden", "true");
 }
 
 // Create the "Show All" Button
